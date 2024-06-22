@@ -1,44 +1,25 @@
 # About
-
-A simple seed project for client/server architecture.
+Simple client/server application with Socket.io. Server gets screenshots periodically and it will be automatically propagated to the client.
 
 ### Technologies in use:
+1. NextJS for client.
+2. NodeJS with ExpressJS for the server.
 
-1. Nextjs for client.
-2. Nodejs with expressJs for the server.
-
-# Run Instructions
+### How to run projects
 
 ## Client project
-
-### Run
-
 `cd client` \
 `npm i` \
 `npm run dev`
 
 ## Server project
+`cd server` \
+`npm i` \
+`npm run dev`
 
-There are multiple ways to run this project.
 
-1. Run:
-   `cd server` \
-   `npm i` \
-   `tsc` [require typescript installed] \
-   `node dist/app.js`
-
-2. Use vscode \
-   Example `launch.json` configuration:
-
-```
- {
-    "type": "pwa-node",
-    "request": "launch",
-    "name": "Launch server",
-    "skipFiles": ["<node_internals>/**"],
-    "program": "${workspaceFolder}/server/dist/app.js",
-    "outFiles": ["${workspaceFolder}/server/**/*.js"],
-    "preLaunchTask": "tsc: build - server/tsconfig.json",
-    "env": {}
-}
-```
+### More details
+When both are connected go to your browser on localhost:3000.
+Client will connect to server, and get screenshots.
+While on the page there is an open connection and after 20sec it will grab a screenshot and automatically it will be shown on the client.
+Screenshots are saved locally in the src/screenshots folder. They are all .png files 1920x1080 resolution.
